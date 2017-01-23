@@ -23,11 +23,14 @@
     <sprite>sprites\spr_bg</sprite>
     <sprite>sprites\spr_lose</sprite>
     <sprite>sprites\spr_win</sprite>
+    <sprite>sprites\spr_lime1</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background1</background>
   </backgrounds>
-  <paths name="paths"/>
+  <paths name="paths">
+    <path>paths\lime_path1</path>
+  </paths>
   <scripts name="scripts">
     <script>scripts\scale_canvas.gml</script>
     <script>scripts\canvas_fullscreen.gml</script>
@@ -49,6 +52,7 @@
     <object>objects\obj_control</object>
     <object>objects\obj_open_site</object>
     <object>objects\obj_lose</object>
+    <object>objects\Lime1</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_MainGame</room>
