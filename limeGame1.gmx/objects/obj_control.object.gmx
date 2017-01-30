@@ -25,10 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*base_width = room_width;
-base_height = room_height;
-width = base_width;
-height = base_height;*/
+            <string>
 global.scale = 1;
 global.base_width = browser_width;
 
@@ -42,7 +39,6 @@ height = browser_height;
 base_height = browser_height;
 base_width = browser_width;
 
-show_debug_message("os_browser " + os_browser);
 if ((os_browser == browser_safari_mobile) || (os_browser == 5)) {
     base_width = 0.7 * browser_height;
     global.base_width = base_width;
@@ -461,7 +457,7 @@ js_executem("window.top.postMessage({ command: 'probtn_performed_action', value:
         <exetype>1</exetype>
         <functionname>action_kill_object</functionname>
         <codestring></codestring>
-        <whoName>obj_Enemy2</whoName>
+        <whoName>&lt;undefined&gt;</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
       </action>
@@ -475,7 +471,7 @@ js_executem("window.top.postMessage({ command: 'probtn_performed_action', value:
         <exetype>1</exetype>
         <functionname>action_kill_object</functionname>
         <codestring></codestring>
-        <whoName>obj_Enemy4_2</whoName>
+        <whoName>&lt;undefined&gt;</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
       </action>
@@ -489,7 +485,7 @@ js_executem("window.top.postMessage({ command: 'probtn_performed_action', value:
         <exetype>1</exetype>
         <functionname>action_kill_object</functionname>
         <codestring></codestring>
-        <whoName>obj_Enemy3</whoName>
+        <whoName>&lt;undefined&gt;</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
       </action>
@@ -843,7 +839,7 @@ draw_set_font(f_score);
         <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
-        <whoName>obj_Enemy2</whoName>
+        <whoName>&lt;undefined&gt;</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
@@ -867,7 +863,7 @@ draw_set_font(f_score);
         <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
-        <whoName>obj_Enemy4_2</whoName>
+        <whoName>&lt;undefined&gt;</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
@@ -891,7 +887,7 @@ draw_set_font(f_score);
         <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
-        <whoName>obj_Enemy3</whoName>
+        <whoName>&lt;undefined&gt;</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>

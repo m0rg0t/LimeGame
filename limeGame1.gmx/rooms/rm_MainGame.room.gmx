@@ -52,7 +52,15 @@
   </views>
   <instances>
     <instance objName="obj_control" x="256" y="32" name="inst_EEEE5DB2" locked="-1" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="Lime1" x="352" y="416" name="inst_1CE4CFA1" locked="0" code="" scaleX="0.300000011920929" scaleY="0.300000011920929" colour="4294967295" rotation="0"/>
+    <instance objName="Lime1" x="320" y="448" name="inst_1CE4CFA1" locked="0" code="" scaleX="0.300000011920929" scaleY="0.300000011920929" colour="4294967295" rotation="0"/>
+    <instance objName="Can1" x="160" y="128" name="inst_915CB4D2" locked="0" code="" scaleX="0.5" scaleY="0.5" colour="4294967295" rotation="0"/>
+    <instance objName="Can1" x="384" y="128" name="inst_B16A3DC7" locked="0" code="" scaleX="0.5" scaleY="0.5" colour="4294967295" rotation="0"/>
+    <instance objName="Can1" x="640" y="128" name="inst_784BA48B" locked="0" code="" scaleX="0.5" scaleY="0.5" colour="4294967295" rotation="0"/>
+    <instance objName="obj_power" x="0" y="64" name="inst_A5B02EDA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_power_position" x="0" y="544" name="inst_2A4E2B06" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_angle" x="192" y="672" name="inst_552E5460" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_angle_position" x="192" y="672" name="inst_EF9D5185" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_arrow" x="416" y="576" name="inst_D516CA5C" locked="0" code="" scaleX="0.5" scaleY="0.5" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

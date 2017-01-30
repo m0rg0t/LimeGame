@@ -11,25 +11,27 @@
     <sound>sound\coin_sound</sound>
   </sounds>
   <sprites name="sprites">
-    <sprite>sprites\spr_Player_Bullet</sprite>
     <sprite>sprites\spr_Enemy1_1</sprite>
-    <sprite>sprites\spr_Explosion1</sprite>
-    <sprite>sprites\spr_Explosion2</sprite>
     <sprite>sprites\vacuum_cleaner</sprite>
-    <sprite>sprites\spr_Enemy2_2</sprite>
-    <sprite>sprites\spr_Enemy3_05</sprite>
-    <sprite>sprites\spr_Enemy4_2</sprite>
     <sprite>sprites\spr_open_site</sprite>
     <sprite>sprites\spr_bg</sprite>
     <sprite>sprites\spr_lose</sprite>
     <sprite>sprites\spr_win</sprite>
     <sprite>sprites\spr_lime1</sprite>
+    <sprite>sprites\spr_can1</sprite>
+    <sprite>sprites\spr_max_min</sprite>
+    <sprite>sprites\spr_position</sprite>
+    <sprite>sprites\spr_min_max_angle</sprite>
+    <sprite>sprites\spr_position_angle</sprite>
+    <sprite>sprites\spr_arrow</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background1</background>
   </backgrounds>
   <paths name="paths">
     <path>paths\lime_path1</path>
+    <path>paths\power_path</path>
+    <path>paths\angle_path</path>
   </paths>
   <scripts name="scripts">
     <script>scripts\scale_canvas.gml</script>
@@ -42,18 +44,21 @@
   </fonts>
   <objects name="objects">
     <object>objects\obj_Myplane</object>
-    <object>objects\obj_Player_Bullet</object>
-    <object>objects\obj_Explosion1</object>
-    <object>objects\obj_Explosion2</object>
     <object>objects\obj_Enemy1</object>
-    <object>objects\obj_Enemy2</object>
-    <object>objects\obj_Enemy4_2</object>
-    <object>objects\obj_Enemy3</object>
     <object>objects\obj_control</object>
     <object>objects\obj_open_site</object>
     <object>objects\obj_lose</object>
     <object>objects\Lime1</object>
+    <object>objects\Can1</object>
+    <object>objects\obj_angle</object>
+    <object>objects\obj_power</object>
+    <object>objects\obj_power_position</object>
+    <object>objects\obj_angle_position</object>
+    <object>objects\obj_arrow</object>
   </objects>
+  <timelines name="timelines">
+    <timeline>timelines\timeline0</timeline>
+  </timelines>
   <rooms name="rooms">
     <room>rooms\rm_MainGame</room>
   </rooms>
