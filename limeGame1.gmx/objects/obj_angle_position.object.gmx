@@ -29,7 +29,7 @@
           </argument>
           <argument>
             <kind>0</kind>
-            <string>10</string>
+            <string>20</string>
           </argument>
           <argument>
             <kind>4</kind>
@@ -62,7 +62,7 @@
             <string>var current_angle = path_position;
 global.angle = (1 - current_angle)*180 - 90;
 
-show_debug_message("step angle1 " + global.angle + " " + current_angle);
+//show_debug_message("step angle1 " + global.angle + " " + current_angle);
 </string>
           </argument>
         </arguments>
