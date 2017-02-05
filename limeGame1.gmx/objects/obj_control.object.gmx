@@ -29,8 +29,6 @@
 global.scale = 1;
 global.base_width = browser_width;
 
-
-//display_set_gui_size(browser_width,browser_height);
 texture_set_interpolation(true);
 
 width = browser_width;
@@ -56,12 +54,7 @@ show_debug_message("base_height " + base_height);
 
 canvas_fullscreen(base_size, base_width, base_height);
 
-/*window_set_size(browser_width, browser_height);
 
-show_debug_message("browser_width " + browser_width);
-show_debug_message("browser_height " + browser_height);
-
-canvas_fullscreen(base_size, width, height);*/
 
 background_xscale[2] = 1 * (view_wview[0] / 1280);
 show_debug_message("background_xscale[2] " + background_xscale[2]);
@@ -72,6 +65,87 @@ show_debug_message("view_hview[0] " + view_hview[0]);
 
 js_executem('window.probtn_game_ready = true;');
 //display_set_gui_size(view_wview[0],view_hview[0]);
+
+
+//TODO
+//scale and place object at nessesary places to fit on screen
+
+var k_power = 5* (view_hview[0]/6) / obj_power.sprite_height;
+obj_power.image_yscale = k_power;
+obj_power.image_xscale = k_power;
+obj_power.x = view_wview[0] - obj_power.sprite_width;
+var k_power_position = obj_power.sprite_width / obj_power_position.sprite_width;
+obj_power_position.image_xscale = k_power_position;
+obj_power_position.image_yscale = k_power_position;
+obj_power_position.x = view_wview[0] - obj_power_position.sprite_width;
+obj_power_position.y = obj_power.y + obj_power.sprite_height;
+
+//obj_power_position.visible = 0;
+
+/*obj_angle.image_xscale = obj_power.image_xscale;
+obj_angle.image_yscale = obj_power.image_yscale;
+obj_angle.x = obj_power.x;
+obj_angle.y = obj_power.y;
+
+obj_angle_position.image_xscale = obj_power_position.image_xscale;
+obj_angle_position.image_yscale = obj_power_position.image_yscale;
+obj_angle_position.x = obj_power_position.x;
+obj_angle_position.y = obj_power_position.y;*/
+
+
+obj_angle.y = view_hview[0] - obj_angle.sprite_height;
+obj_angle_position.y = view_hview[0] - obj_angle_position.sprite_height;
+
+obj_lime.y = 3*(view_hview[0] / 4);
+obj_lime.x = (view_wview[0] / 2);
+
+bg2.x = 0;
+bg2.y = 0;
+var k_bg = view_wview[0] / bg2.sprite_width;
+bg2.image_xscale = k_bg;
+bg2.image_yscale = k_bg;
+
+bg1.x = 0;
+bg1.y = bg2.sprite_height;
+bg1.image_xscale = k_bg;
+bg1.image_yscale = k_bg;
+
+obj_logo.x = 0;
+obj_logo.y = 0;
+var k_logo = (view_wview[0] / 3) / obj_logo.sprite_width;
+obj_logo.image_xscale = k_logo;
+obj_logo.image_yscale = k_logo;
+
+obj_line.x = 0;
+obj_line.y = 0;
+var k_line = view_wview[0] / obj_line.sprite_width;
+obj_line.image_xscale = k_line;
+obj_line.image_yscale = k_line;
+
+var i;
+for (i = 0; i &lt; instance_number(obj_bottle); i += 1)
+{
+   bottle[i] = instance_find(obj_bottle,i);
+   bottle[i].y = bg2.sprite_height - bg2.sprite_height / 8;
+   bottle[i].image_xscale = 1;
+   bottle[i].image_yscale = 1;
+   
+   var newwidth = view_wview[0] / 7;
+   var newscale = newwidth / bottle[i].sprite_width;
+   bottle[i].image_xscale = newscale;
+   bottle[i].image_yscale = newscale;
+   
+   var k=1;
+   if (i==1) k = 3;
+   if (i==2) k = 5;
+   bottle[i].x = k*newwidth;
+   
+   hit[i] = instance_find(obj_bottle_hit, i);
+   hit[i].image_xscale =  bottle[i].image_xscale;
+   hit[i].image_yscale =  bottle[i].image_yscale;
+   hit[i].x = bottle[i].x;
+   hit[i].y = bottle[i].y - hit[i].sprite_height; 
+}
 
 
 
@@ -163,7 +237,7 @@ js_executem('window.probtn_game_ready = true;');
           </argument>
           <argument>
             <kind>0</kind>
-            <string>10</string>
+            <string>20</string>
           </argument>
         </arguments>
       </action>
@@ -333,30 +407,6 @@ js_executem('window.probtn_game_ready = true;');
       </action>
       <action>
         <libid>1</libid>
-        <id>611</id>
-        <kind>6</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>-1</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>seconds</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>-1</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
         <id>612</id>
         <kind>0</kind>
         <userelative>0</userelative>
@@ -418,76 +468,6 @@ js_executem("window.top.postMessage({ command: 'probtn_performed_action', value:
 </string>
           </argument>
         </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>203</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_kill_object</functionname>
-        <codestring></codestring>
-        <whoName>obj_Myplane</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>203</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_kill_object</functionname>
-        <codestring></codestring>
-        <whoName>obj_Enemy1</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>203</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_kill_object</functionname>
-        <codestring></codestring>
-        <whoName>&lt;undefined&gt;</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>203</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_kill_object</functionname>
-        <codestring></codestring>
-        <whoName>&lt;undefined&gt;</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>203</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_kill_object</functionname>
-        <codestring></codestring>
-        <whoName>&lt;undefined&gt;</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
       </action>
       <action>
         <libid>1</libid>
@@ -1131,13 +1111,13 @@ if (countdown&gt;0) {
 
 if (seconds&gt;0) {
     draw_set_colour(make_colour_rgb(62, 62, 62));
-    draw_rectangle(0, 0, view_wview[0]*2, 30, false);
+    //draw_rectangle(0, 0, view_wview[0]*2, 30, false);
     
     draw_set_colour(c_white);
     draw_set_font(f_score);
 
-    draw_text(10, 5, "Время: "+ seconds);
-    draw_text(base_width/2, 5, "Скидка: " + float_score);
+    //draw_text(10, 5, "Время: "+ seconds);
+    draw_text(base_width/2, 5, "Попадания: " + float_score + " из 5");
 }
 
 //draw_text(20, 110, "Ширина1: " + room_width);

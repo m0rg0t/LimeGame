@@ -66,10 +66,6 @@
             <string>var current_power = path_position;
 global.start_speed = (1-current_power)*20;
 
-draw_set_colour(make_colour_rgb(66, 65, 65));
-draw_set_font(f_countdown);
-
-draw_text(30,30, "global.start_speed2 " + global.start_speed + " " + current_power);
 </string>
           </argument>
         </arguments>

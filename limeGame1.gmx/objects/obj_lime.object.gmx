@@ -3,7 +3,7 @@
   <spriteName>spr_lime1</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-10</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -175,8 +175,8 @@ start_lime = false;
 }
 
 if (path_position&gt;0) {
-    image_xscale = 0.3*(1-path_position);
-    image_yscale = 0.3*(1-path_position);
+    image_xscale = 0.15 + 0.15*(1-path_position);
+    image_yscale = 0.15 + 0.15*(1-path_position);
 }
 </string>
           </argument>

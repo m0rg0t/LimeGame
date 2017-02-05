@@ -14,7 +14,7 @@
     <sprite>sprites\spr_Enemy1_1</sprite>
     <sprite>sprites\vacuum_cleaner</sprite>
     <sprite>sprites\spr_open_site</sprite>
-    <sprite>sprites\spr_bg</sprite>
+    <sprite>sprites\spr_bg1</sprite>
     <sprite>sprites\spr_lose</sprite>
     <sprite>sprites\spr_win</sprite>
     <sprite>sprites\spr_lime1</sprite>
@@ -24,9 +24,14 @@
     <sprite>sprites\spr_min_max_angle</sprite>
     <sprite>sprites\spr_position_angle</sprite>
     <sprite>sprites\spr_arrow</sprite>
+    <sprite>sprites\spr_can_hit</sprite>
+    <sprite>sprites\spr_bg2</sprite>
+    <sprite>sprites\spr_logo</sprite>
+    <sprite>sprites\spr_line1</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background1</background>
+    <background>background\background2</background>
   </backgrounds>
   <paths name="paths">
     <path>paths\lime_path1</path>
@@ -48,13 +53,18 @@
     <object>objects\obj_control</object>
     <object>objects\obj_open_site</object>
     <object>objects\obj_lose</object>
-    <object>objects\Lime1</object>
-    <object>objects\Can1</object>
+    <object>objects\obj_lime</object>
+    <object>objects\obj_bottle</object>
     <object>objects\obj_angle</object>
     <object>objects\obj_power</object>
     <object>objects\obj_power_position</object>
     <object>objects\obj_angle_position</object>
     <object>objects\obj_arrow</object>
+    <object>objects\obj_bottle_hit</object>
+    <object>objects\bg1</object>
+    <object>objects\bg2</object>
+    <object>objects\obj_logo</object>
+    <object>objects\obj_line</object>
   </objects>
   <timelines name="timelines">
     <timeline>timelines\timeline0</timeline>
