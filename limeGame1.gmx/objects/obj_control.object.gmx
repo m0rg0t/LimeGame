@@ -55,7 +55,6 @@ show_debug_message("base_height " + base_height);
 canvas_fullscreen(base_size, base_width, base_height);
 
 
-
 background_xscale[2] = 1 * (view_wview[0] / 1280);
 show_debug_message("background_xscale[2] " + background_xscale[2]);
 show_debug_message("global.base_width " + global.base_width);
@@ -73,16 +72,16 @@ js_executem('window.probtn_game_ready = true;');
 var k_power = 5* (view_hview[0]/6) / obj_power.sprite_height;
 obj_power.image_yscale = k_power;
 obj_power.image_xscale = k_power;
-obj_power.x = view_wview[0] - obj_power.sprite_width;
+obj_power.x = view_wview[0] - obj_power.sprite_width*1.5;
 var k_power_position = obj_power.sprite_width / obj_power_position.sprite_width;
 obj_power_position.image_xscale = k_power_position;
 obj_power_position.image_yscale = k_power_position;
-obj_power_position.x = view_wview[0] - obj_power_position.sprite_width;
+obj_power_position.x = view_wview[0] - obj_power_position.sprite_width*1.5;
 obj_power_position.y = obj_power.y + obj_power.sprite_height;
 
-//obj_power_position.visible = 0;
+//obj_power_position.visible = false;
 
-/*obj_angle.image_xscale = obj_power.image_xscale;
+obj_angle.image_xscale = obj_power.image_xscale;
 obj_angle.image_yscale = obj_power.image_yscale;
 obj_angle.x = obj_power.x;
 obj_angle.y = obj_power.y;
@@ -90,7 +89,9 @@ obj_angle.y = obj_power.y;
 obj_angle_position.image_xscale = obj_power_position.image_xscale;
 obj_angle_position.image_yscale = obj_power_position.image_yscale;
 obj_angle_position.x = obj_power_position.x;
-obj_angle_position.y = obj_power_position.y;*/
+obj_angle_position.y = obj_power_position.y;
+
+obj_power_position.visible = false;
 
 
 obj_angle.y = view_hview[0] - obj_angle.sprite_height;
@@ -404,6 +405,56 @@ for (i = 0; i &lt; instance_number(obj_bottle); i += 1)
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (!instance_exists(obj_lime)) {
+
+    var lime_y = 3*(view_hview[0] / 4);
+    var lime_x = (view_wview[0] / 2);
+    
+    
+    
+    instance_create(lime_x, lime_y, obj_lime);
+    obj_lime.image_xscale = 0.3;
+    obj_lime.image_yscale = 0.3;
+    
+    obj_angle.visible = true;
+    obj_power.visible = false;
+    obj_angle_position.visible = true;
+    obj_power_position.visible = false;
+    obj_angle_position.y = obj_angle.y + obj_angle.sprite_height;
+    obj_power_position.y = obj_power.y + obj_power.sprite_height;
+    
+    with (obj_angle_position)
+    {
+        path_start(angle2_path, 20, path_action_reverse, false);
+    } 
+    
+    with (obj_power_position)
+    {
+        path_start(power_path, 40, path_action_reverse, false);
+    } 
+    
+    
+}
+</string>
+          </argument>
+        </arguments>
       </action>
       <action>
         <libid>1</libid>

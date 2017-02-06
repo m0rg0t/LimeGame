@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>8</kind>
-            <path>power_path</path>
+            <path>angle2_path</path>
           </argument>
           <argument>
             <kind>0</kind>
@@ -57,7 +57,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var angle_path_length = path_get_length(power_path);
+            <string>var angle_path_length = path_get_length(angle2_path);
 k_path_scale = obj_angle.sprite_height / (angle_path_length/2);
 path_scale = k_path_scale;
 </string>

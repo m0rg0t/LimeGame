@@ -36,7 +36,7 @@
   <paths name="paths">
     <path>paths\lime_path1</path>
     <path>paths\power_path</path>
-    <path>paths\angle_path</path>
+    <path>paths\angle2_path</path>
   </paths>
   <scripts name="scripts">
     <script>scripts\scale_canvas.gml</script>

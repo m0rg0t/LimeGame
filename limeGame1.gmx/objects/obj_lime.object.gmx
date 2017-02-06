@@ -11,6 +11,38 @@
     <event eventtype="0" enumb="0">
       <action>
         <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>global.state = 1;
+// 1 - before angle
+// 2 - before power
+//
+obj_lime.y = 3*(view_hview[0] / 4);
+obj_lime.x = (view_wview[0] / 2);
+
+current_path = path_add();
+//path_assign(current_path, lime_path1);
+//path_start('lime_path1', 20, 'reverse', 'relative');
+
+start_lime = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
         <id>201</id>
         <kind>0</kind>
         <userelative>-1</userelative>
@@ -37,6 +69,8 @@
           </argument>
         </arguments>
       </action>
+    </event>
+    <event eventtype="1" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -53,22 +87,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.state = 1;
-// 1 - before angle
-// 2 - before power
-//
-
-current_path = path_add();
-//path_assign(current_path, lime_path1);
-//path_start('lime_path1', 20, 'reverse', 'relative');
-
-start_lime = false;
+            <string>//show_message("destroy lime");
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="6" enumb="0">
+    <event eventtype="6" enumb="4">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -85,11 +110,41 @@ start_lime = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>start_lime = true;
+            <string>show_debug_message(global.state);
+if (global.state == 1) {
+    with (obj_angle_position)
+    {
+        var current_angle = path_position;
+        global.angle = (1 - current_angle)*180 - 90;
+        path_end();
+    }    
+    obj_angle.visible = false;
+    obj_power.visible = true;
+    obj_angle_position.visible = false;
+    obj_power_position.visible = true;
+    global.state = 2;    
+    with (obj_arrow)
+    {
+        instance_destroy();
+    } 
+    with (obj_power_position)
+    {
+        //path_start();
+    } 
+} else {
+    if (global.state == 2) {
+        start_lime = true;
+    } else {
+    }
+}
+
+
 </string>
           </argument>
         </arguments>
       </action>
+    </event>
+    <event eventtype="7" enumb="8">
       <action>
         <libid>1</libid>
         <id>203</id>
@@ -100,9 +155,30 @@ start_lime = false;
         <exetype>1</exetype>
         <functionname>action_kill_object</functionname>
         <codestring></codestring>
-        <whoName>obj_arrow</whoName>
+        <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//show_message("End path");
+</string>
+          </argument>
+        </arguments>
       </action>
     </event>
     <event eventtype="8" enumb="64">
