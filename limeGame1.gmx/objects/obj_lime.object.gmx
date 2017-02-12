@@ -88,15 +88,25 @@ initYStart = 0;
             <kind>1</kind>
             <string>if (mouse_check_button_released(mb_left))
 {
-    var initX = mouse_x;
-    var initY = mouse_y;    
-    var distance = point_distance(x, y, mouse_x, mouse_y);
-    var angle = point_direction(x, y, mouse_x, mouse_y);
-    
-    global.start_speed = distance / 25;
-    global.angle = angle - 90;
-    
-    start_lime = true;
+    if (!position_meeting(mouse_x, mouse_y, obj_logo)) {
+        var initX = mouse_x;
+        var initY = mouse_y;    
+        var distance = point_distance(x, y, mouse_x, mouse_y);
+        var angle = point_direction(x, y, mouse_x, mouse_y);
+        
+        global.start_speed = distance / 25;
+        global.angle = angle - 90;
+        
+        if (global.start_speed &lt; 5) {
+            path_start(dead_lime_path, 20, path_action_stop, 0);
+        } else {
+            start_lime = true;
+        }        
+    }
+}
+
+if (path_position&gt;0) &amp;&amp; (path_position&lt;1) {
+    image_angle+=7;
 }
 </string>
           </argument>

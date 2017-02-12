@@ -8,7 +8,7 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="6" enumb="0">
+    <event eventtype="3" enumb="1">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -25,7 +25,19 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//open site maybe?
+            <string>if (mouse_check_button_released(mb_left))
+{
+    if (position_meeting(mouse_x, mouse_y, obj_logo)) {
+    show_debug_message("mouse_check_button_released");
+    start_left = false;
+    
+    url_open_full("http://coronaextra.com", "_self","");
+    }
+}
+
+if (start_left == false) {
+    //url_open_full("http://coronaextra.com", "_self","");
+}
 </string>
           </argument>
         </arguments>

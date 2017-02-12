@@ -9,6 +9,7 @@
   <sounds name="sound">
     <sound>sound\boop</sound>
     <sound>sound\coin_sound</sound>
+    <sound>sound\sound2_hit1</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_Enemy1_1</sprite>
@@ -34,6 +35,7 @@
     <path>paths\lime_path1</path>
     <path>paths\power_path</path>
     <path>paths\angle2_path</path>
+    <path>paths\dead_lime_path</path>
   </paths>
   <scripts name="scripts">
     <script>scripts\scale_canvas.gml</script>

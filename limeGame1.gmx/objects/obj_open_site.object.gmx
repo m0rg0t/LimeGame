@@ -110,6 +110,8 @@ if (start_left == false) {
     //js_executem('window.open("https://tk-react-client.herokuapp.com/pbw/57e8122a2f4c0700033401c7", "_blank");');
     //url_open_full("https://tk-react-client.herokuapp.com/pbw/57e8122a2f4c0700033401c7", "_self","");
 }
+
+
 </string>
           </argument>
         </arguments>
