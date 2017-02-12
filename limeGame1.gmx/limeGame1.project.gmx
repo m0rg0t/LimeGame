@@ -29,10 +29,7 @@
     <sprite>sprites\spr_logo</sprite>
     <sprite>sprites\spr_line1</sprite>
   </sprites>
-  <backgrounds name="background">
-    <background>background\background1</background>
-    <background>background\background2</background>
-  </backgrounds>
+  <backgrounds name="background"/>
   <paths name="paths">
     <path>paths\lime_path1</path>
     <path>paths\power_path</path>

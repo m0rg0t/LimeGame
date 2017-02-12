@@ -422,34 +422,34 @@ for (i = 0; i &lt; instance_number(obj_bottle); i += 1)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (!instance_exists(obj_lime)) {
+            <string>seconds = seconds - 1;
+
+if (!instance_exists(obj_lime)) {
 
     var lime_y = 3*(view_hview[0] / 4);
     var lime_x = (view_wview[0] / 2);
-    
-    
+
     
     instance_create(lime_x, lime_y, obj_lime);
     obj_lime.image_xscale = 0.3;
     obj_lime.image_yscale = 0.3;
     
-    obj_angle.visible = true;
+    /*obj_angle.visible = true;
     obj_power.visible = false;
     obj_angle_position.visible = true;
-    obj_power_position.visible = false;
+    obj_power_position.visible = false;*/
+    
     obj_angle_position.y = obj_angle.y + obj_angle.sprite_height;
     obj_power_position.y = obj_power.y + obj_power.sprite_height;
     
     with (obj_angle_position)
     {
         path_start(angle2_path, 20, path_action_reverse, false);
-    } 
-    
+    }    
     with (obj_power_position)
     {
         path_start(power_path, 40, path_action_reverse, false);
-    } 
-    
+    }   
     
 }
 </string>
@@ -838,97 +838,22 @@ draw_set_font(f_score);
       </action>
       <action>
         <libid>1</libid>
-        <id>611</id>
-        <kind>6</kind>
-        <userelative>-1</userelative>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
         <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
-        <whoName>obj_Enemy1</whoName>
+        <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>vspeed</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>4</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>611</id>
-        <kind>6</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>&lt;undefined&gt;</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>vspeed</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>8</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>611</id>
-        <kind>6</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>&lt;undefined&gt;</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>vspeed</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>8</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>611</id>
-        <kind>6</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>&lt;undefined&gt;</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>vspeed</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>2</string>
+            <string>//seconds = 30;
+</string>
           </argument>
         </arguments>
       </action>
@@ -1164,10 +1089,11 @@ if (seconds&gt;0) {
     draw_set_colour(make_colour_rgb(62, 62, 62));
     //draw_rectangle(0, 0, view_wview[0]*2, 30, false);
     
-    draw_set_colour(c_white);
+    
     draw_set_font(f_score);
-
-    //draw_text(10, 5, "Время: "+ seconds);
+    draw_set_colour(c_black);
+    draw_text(10, 5, "Время: "+ seconds);
+    draw_set_colour(c_white);
     draw_text(base_width/2, 5, "Попадания: " + float_score + " из 5");
 }
 
