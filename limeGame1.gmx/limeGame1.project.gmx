@@ -12,7 +12,6 @@
     <sound>sound\sound2_hit1</sound>
   </sounds>
   <sprites name="sprites">
-    <sprite>sprites\spr_Enemy1_1</sprite>
     <sprite>sprites\vacuum_cleaner</sprite>
     <sprite>sprites\spr_open_site</sprite>
     <sprite>sprites\spr_bg1</sprite>
@@ -29,6 +28,13 @@
     <sprite>sprites\spr_bg2</sprite>
     <sprite>sprites\spr_logo</sprite>
     <sprite>sprites\spr_line1</sprite>
+    <sprites name="finish">
+      <sprite>sprites\spr_overlay</sprite>
+      <sprite>sprites\spr_more</sprite>
+      <sprite>sprites\spr_lose_text</sprite>
+      <sprite>sprites\spr_win_text</sprite>
+      <sprite>sprites\spr_try_again</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths">
@@ -41,14 +47,13 @@
     <script>scripts\scale_canvas.gml</script>
     <script>scripts\canvas_fullscreen.gml</script>
     <script>scripts\point_bounds.gml</script>
+    <script>scripts\scale_end_game.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\f_score</font>
     <font>fonts\f_countdown</font>
   </fonts>
   <objects name="objects">
-    <object>objects\obj_Myplane</object>
-    <object>objects\obj_Enemy1</object>
     <object>objects\obj_control</object>
     <object>objects\obj_open_site</object>
     <object>objects\obj_lose</object>
@@ -64,6 +69,14 @@
     <object>objects\bg2</object>
     <object>objects\obj_logo</object>
     <object>objects\obj_line</object>
+    <object>objects\obj_dead_lime</object>
+    <objects name="finish">
+      <object>objects\obj_try_again</object>
+      <object>objects\obj_overlay</object>
+      <object>objects\obj_win_text</object>
+      <object>objects\obj_lose_text</object>
+      <object>objects\obj_more</object>
+    </objects>
   </objects>
   <timelines name="timelines">
     <timeline>timelines\timeline0</timeline>
