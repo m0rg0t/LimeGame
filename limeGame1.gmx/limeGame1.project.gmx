@@ -34,6 +34,10 @@
       <sprite>sprites\spr_lose_text</sprite>
       <sprite>sprites\spr_win_text</sprite>
       <sprite>sprites\spr_try_again</sprite>
+      <sprite>sprites\spr_share_text</sprite>
+      <sprite>sprites\spr_fb_button</sprite>
+      <sprite>sprites\spr_twitter_button</sprite>
+      <sprite>sprites\spr_vk_button</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background"/>
@@ -76,6 +80,10 @@
       <object>objects\obj_win_text</object>
       <object>objects\obj_lose_text</object>
       <object>objects\obj_more</object>
+      <object>objects\obj_share_text</object>
+      <object>objects\obj_fb</object>
+      <object>objects\obj_vk</object>
+      <object>objects\obj_twitter</object>
     </objects>
   </objects>
   <timelines name="timelines">
