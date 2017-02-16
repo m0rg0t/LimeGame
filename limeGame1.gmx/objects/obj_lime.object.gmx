@@ -29,7 +29,9 @@
 // 1 - before angle
 // 2 - before power
 //
-obj_lime.y = 3*(view_hview[0] / 4);
+
+//obj_lime.y = 3*(view_hview[0] / 4);
+obj_lime.y = view_hview[0] -  obj_lime.sprite_height*1.3;
 obj_lime.x = (view_wview[0] / 2);
 
 current_path = path_add();
@@ -110,7 +112,7 @@ part_emitter_stream(FirstParticleSystem,first_emitter,first_particle,2);
             <kind>1</kind>
             <string>if (mouse_check_button_released(mb_left))
 {
-    if (!position_meeting(mouse_x, mouse_y, obj_logo)) {
+    if (!position_meeting(mouse_x, mouse_y, obj_logo)) &amp;&amp; (!position_meeting(mouse_x, mouse_y, obj_try_again)) {
         var initX = mouse_x;
         var initY = mouse_y;    
         var distance = point_distance(x, y, mouse_x, mouse_y);
@@ -268,19 +270,6 @@ if (path_position&gt;0) &amp;&amp; (path_position&lt;1) {
        current_x = lengthdir_x(i, global.angle + 90);
        path_add_point(current_path, current_x, current_y, 100);
        
-       //variant with gravity fall
-       /*current_y = - path_speed * i;
-       current_x = (current_a*i*i)/2;
-       
-       //draw_line_colour(prev_x, prev_y, lengthdir_x(current_x, global.angle), lengthdir_x(current_y, global.angle), c_red, c_blue);
-       
-       //draw_arrow(x, y, 0, 0, 50);
-       //draw_line_colour(50, 50, 300, 50, c_red, c_blue);
-       //draw_line_colour(x, y, 0, 0, c_red, c_blue);
-       
-       show_debug_message("current_x " + current_x +"; current_y " + current_y);
-       /path_add_point(current_path, lengthdir_x(current_x, global.angle), lengthdir_y(current_y, global.angle), 100);*/
-       
        i += 500;
     }
     
@@ -290,8 +279,8 @@ if (path_position&gt;0) &amp;&amp; (path_position&lt;1) {
 }
 
 if (path_position&gt;0) {
-    image_xscale = 0.05 + 0.25*(1-path_position);
-    image_yscale = 0.05 + 0.25*(1-path_position);
+    image_xscale = 0.02 + 0.28*(1-path_position);
+    image_yscale = 0.02 + 0.28*(1-path_position);
 }
 </string>
           </argument>

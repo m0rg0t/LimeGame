@@ -99,7 +99,7 @@ obj_power_position.visible = false;
 obj_angle.y = view_hview[0] - obj_angle.sprite_height;
 obj_angle_position.y = view_hview[0] - obj_angle_position.sprite_height;
 
-obj_lime.y = 3*(view_hview[0] / 4);
+obj_lime.y = view_hview[0] -  obj_lime.sprite_height*1.3;
 obj_lime.x = (view_wview[0] / 2);
 
 bg2.x = 0;
@@ -428,13 +428,15 @@ for (i = 0; i &lt; instance_number(obj_bottle); i += 1)
 
 if (!instance_exists(obj_lime)) {
 
-    var lime_y = 3*(view_hview[0] / 4);
+    var lime_y = 3*(view_hview[0] / 4);    
     var lime_x = (view_wview[0] / 2);
 
     
     instance_create(lime_x, lime_y, obj_lime);
+   
     obj_lime.image_xscale = 0.3;
     obj_lime.image_yscale = 0.3;
+    obj_lime.y = view_hview[0] -  obj_lime.sprite_height*1.3;
     
     /*obj_angle.visible = true;
     obj_power.visible = false;
@@ -539,6 +541,20 @@ if (!instance_exists(obj_lime)) {
         <functionname>action_kill_object</functionname>
         <codestring></codestring>
         <whoName>obj_logo</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>203</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_kill_object</functionname>
+        <codestring></codestring>
+        <whoName>obj_line</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
       </action>
@@ -1424,7 +1440,30 @@ if (countdown&gt;0) {
     draw_set_colour(make_colour_rgb(66, 65, 65));
     draw_set_font(f_countdown);
     
-    draw_text(global.base_width/2 -20, view_hview[0]/2 - 20, countdown);
+    //draw_text(global.base_width/2 -20, view_hview[0]/2 - 20, countdown);
+    var current_countdown_spr = spr_3;
+    {
+    switch (countdown)
+        {
+        case 1:
+           current_countdown_spr = spr_1;
+           break;
+        case 2:
+            current_countdown_spr = spr_2;
+            break;
+        case 3:
+            current_countdown_spr = spr_3;
+            break;
+        }
+    }
+
+    var xscale = (view_wview[0] / 4) / sprite_get_width(current_countdown_spr);
+    show_debug_message("xscale "+ xscale);
+    show_debug_message("sprite_get_width(current_countdown_spr) "+ sprite_get_width(current_countdown_spr));
+    var yscale = xscale;
+    var x_current = view_wview[0]/2 - (sprite_get_width(current_countdown_spr)*xscale)/2;
+    var y_current = view_hview[0]/2 - (sprite_get_width(current_countdown_spr)*yscale)/2;
+    draw_sprite_ext(current_countdown_spr, 0, x_current, y_current, xscale, yscale, 0, c_white, 1);
 }
 
 if (seconds&gt;0) {
