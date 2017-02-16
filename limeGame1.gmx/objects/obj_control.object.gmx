@@ -113,17 +113,17 @@ bg1.y = bg2.sprite_height;
 bg1.image_xscale = k_bg;
 bg1.image_yscale = k_bg;
 
-obj_logo.x = 0;
-obj_logo.y = 0;
-var k_logo = (view_wview[0] / 3) / obj_logo.sprite_width;
-obj_logo.image_xscale = k_logo;
-obj_logo.image_yscale = k_logo;
-
 obj_line.x = 0;
 obj_line.y = 0;
 var k_line = view_wview[0] / obj_line.sprite_width;
 obj_line.image_xscale = k_line;
 obj_line.image_yscale = k_line;
+
+obj_logo.x = 0;
+obj_logo.y = obj_line.sprite_height;
+var k_logo = (view_wview[0] / 4) / obj_logo.sprite_width;
+obj_logo.image_xscale = k_logo;
+obj_logo.image_yscale = k_logo;
 
 var i;
 for (i = 0; i &lt; instance_number(obj_bottle); i += 1)
@@ -1472,7 +1472,7 @@ if (seconds&gt;0) {
     
     
     draw_set_font(f_score);
-    draw_set_colour(c_black);
+    draw_set_colour(c_white);
     draw_text(10, 5, "Время: "+ seconds);
     draw_set_colour(c_white);
     draw_text(base_width/2, 5, "Попадания: " + float_score + " из 5");

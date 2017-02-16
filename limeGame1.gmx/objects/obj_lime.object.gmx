@@ -110,7 +110,7 @@ part_emitter_stream(FirstParticleSystem,first_emitter,first_particle,2);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (mouse_check_button_released(mb_left))
+            <string>if (mouse_check_button_released(mb_left) &amp;&amp; (obj_control.countdown &lt; 1))
 {
     if (!position_meeting(mouse_x, mouse_y, obj_logo)) &amp;&amp; (!position_meeting(mouse_x, mouse_y, obj_try_again)) {
         var initX = mouse_x;
