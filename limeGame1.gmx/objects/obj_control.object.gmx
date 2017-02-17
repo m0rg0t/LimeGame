@@ -63,8 +63,8 @@ show_debug_message("global.base_width " + global.base_width);
 show_debug_message("view_wview[0] " + view_wview[0]);
 show_debug_message("view_hview[0] " + view_hview[0]);*/
 
-
-js_executem('window.probtn_game_ready = true;');
+//js_executem('alert("js_exec");');
+js_executem('window.probtn_game_ready = true; console.log("js_exec");');
 //display_set_gui_size(view_wview[0],view_hview[0]);
 
 
@@ -119,7 +119,7 @@ var k_line = view_wview[0] / obj_line.sprite_width;
 obj_line.image_xscale = k_line;
 obj_line.image_yscale = k_line;
 
-obj_logo.x = 0;
+obj_logo.x = 15;
 obj_logo.y = obj_line.sprite_height;
 var k_logo = (view_wview[0] / 4) / obj_logo.sprite_width;
 obj_logo.image_xscale = k_logo;
@@ -1473,7 +1473,7 @@ if (seconds&gt;0) {
     
     draw_set_font(f_score);
     draw_set_colour(c_white);
-    draw_text(10, 5, "Время: "+ seconds);
+    draw_text(15, 5, "Время: "+ seconds);
     draw_set_colour(c_white);
     draw_text(base_width/2, 5, "Попадания: " + float_score + " из 5");
 }
