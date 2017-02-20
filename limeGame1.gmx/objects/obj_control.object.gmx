@@ -126,10 +126,16 @@ obj_logo.image_xscale = k_logo;
 obj_logo.image_yscale = k_logo;
 
 var i;
-for (i = 0; i &lt; instance_number(obj_bottle); i += 1)
+var bottle_count = instance_number(obj_bottle);
+for (i = 0; i &lt; bottle_count; i += 1)
 {
    bottle[i] = instance_find(obj_bottle,i);
-   bottle[i].y = bg2.sprite_height - bg2.sprite_height / 8;
+   if (i==1) {
+       bottle[i].y = bg2.sprite_height - bg2.sprite_height / 8;
+   } else {
+       bottle[i].y = bg2.sprite_height - 2*bg2.sprite_height / 8;
+   }
+   
    bottle[i].image_xscale = 1;
    bottle[i].image_yscale = 1;
    
