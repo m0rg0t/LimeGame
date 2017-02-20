@@ -279,8 +279,18 @@ if (path_position&gt;0) &amp;&amp; (path_position&lt;1) {
 }
 
 if (path_position&gt;0) {
-    image_xscale = 0.02 + 0.28*(1-path_position);
-    image_yscale = 0.02 + 0.28*(1-path_position);
+    var hit2 = instance_find(obj_bottle_hit,1);
+    var distance_bottle = point_distance(x, y, hit2.x, hit2.y);
+    var path_length = path_get_length(current_path);
+    
+    var path_percent = distance_bottle / path_length;
+
+    var path_k = path_position/path_percent;
+    if (path_k &gt; 1) {
+        path_k = 1;
+    }
+    image_xscale = 0.10 + 0.2*(1-path_k);
+    image_yscale = 0.10 + 0.2*(1-path_k);
 }
 </string>
           </argument>

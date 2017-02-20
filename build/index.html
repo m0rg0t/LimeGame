@@ -88,6 +88,8 @@
         <img id="limes" style="position: fixed; width: 100%; bottom: 0%; left: 0%;" src="images/limes.png"/>
 
         <script>
+            window.game_timeout = false;
+
             var body = document.getElementsByTagName("body")[0];
             body.style.width = window.innerWidth + "px";
             body.style.height = window.innerHeight + "px";
@@ -96,10 +98,12 @@
             html.style.width = window.innerWidth + "px";
             html.style.height = window.innerHeight + "px";
 
-            document.body.addEventListener('touchmove', function(e){ e.preventDefault(); });
+            document.body.addEventListener('touchmove', function (e) { e.preventDefault(); });
+
+            setTimeout(function() { window.game_timeout = true; }, 2000);
 
             var waitForLoad = setInterval(function () {
-                if (window.probtn_game_ready === true) {
+                if ((window.probtn_game_ready === true) && (window.game_timeout === true)) {
                     console.log("window.probtn_game_ready", window.probtn_game_ready);
 
                     /*var start_button = document.getElementById("start_button");
@@ -107,13 +111,13 @@
                     start_button.className += " show";*/
 
                     //start_button.addEventListener("click", function() {
-                        var canvas = document.getElementById("canvas");
-                        canvas.style.display = "block !important";
-                        canvas.className += " show";
+                    var canvas = document.getElementById("canvas");
+                    canvas.style.display = "block !important";
+                    canvas.className += " show";
 
-                        var gm4html5_div_id = document.getElementById("gm4html5_div_id");
-                        gm4html5_div_id.style.display = "block !important";
-                        gm4html5_div_id.className += " show";
+                    var gm4html5_div_id = document.getElementById("gm4html5_div_id");
+                    gm4html5_div_id.style.display = "block !important";
+                    gm4html5_div_id.className += " show";
                     //}, false);
 
                     clearInterval(waitForLoad);

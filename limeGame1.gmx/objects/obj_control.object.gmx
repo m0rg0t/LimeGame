@@ -144,9 +144,9 @@ for (i = 0; i &lt; instance_number(obj_bottle); i += 1)
    bottle[i].x = k*newwidth;
    
    hit[i] = instance_find(obj_bottle_hit, i);
-   hit[i].image_xscale =  bottle[i].image_xscale;
-   hit[i].image_yscale =  bottle[i].image_yscale;
-   hit[i].x = bottle[i].x;
+   hit[i].image_xscale =  bottle[i].image_xscale*0.6;
+   hit[i].image_yscale =  bottle[i].image_yscale*0.6;
+   hit[i].x = bottle[i].x + (bottle[i].sprite_width/2 - hit[i].sprite_width/2);
    hit[i].y = bottle[i].y - hit[i].sprite_height; 
 }
 
@@ -1458,8 +1458,6 @@ if (countdown&gt;0) {
     }
 
     var xscale = (view_wview[0] / 4) / sprite_get_width(current_countdown_spr);
-    show_debug_message("xscale "+ xscale);
-    show_debug_message("sprite_get_width(current_countdown_spr) "+ sprite_get_width(current_countdown_spr));
     var yscale = xscale;
     var x_current = view_wview[0]/2 - (sprite_get_width(current_countdown_spr)*xscale)/2;
     var y_current = view_hview[0]/2 - (sprite_get_width(current_countdown_spr)*yscale)/2;
@@ -1468,8 +1466,6 @@ if (countdown&gt;0) {
 
 if (seconds&gt;0) {
     draw_set_colour(make_colour_rgb(62, 62, 62));
-    //draw_rectangle(0, 0, view_wview[0]*2, 30, false);
-    
     
     draw_set_font(f_score);
     draw_set_colour(c_white);
@@ -1477,9 +1473,6 @@ if (seconds&gt;0) {
     draw_set_colour(c_white);
     draw_text(base_width/2, 5, "Попадания: " + float_score + " из 5");
 }
-
-//draw_text(20, 110, "Ширина1: " + room_width);
-//draw_text(20, 150, "Ширина2: " + view_wview[0]);
 
 background_xscale[2] = 1 * (view_wview[0] / 1280);
 background_yscale[2] = background_xscale[2];
