@@ -15,7 +15,7 @@
         <!-- Set the background colour of the document -->
         <style>
             body {
-              background: #000000;
+              background: white;
               color:#cccccc;
               margin: 0px;
               padding: 0px;
@@ -67,10 +67,64 @@
                width: 100%;
                height: 100%;
             }
+            
+            #canvas, #gm4html5_div_id {
+                display: none;
+            }
+            #canvas.show, #gm4html5_div_id.show, #start_button.show {
+                display: block !important;
+            }
         </style>
     </head>
 
     <body>
+        
+        <div id="container1" style="position:fixed; width: 100%; top: 10%; display:  inline-block; text-align: center;">
+            <img id="logo" style="width: 60%; position:  relative" src="images/logo-big.png"/>
+            <img id="text" style="margin-top:15px; width: 60%; position:  relative" src="images/how-to-play.png"/>
+            <img id="start_button" style="display: none; margin-top:15px; width: 70%; position: relative" src="images/start-btn.png"/>
+        </div>        
+
+        <img id="limes" style="position: fixed; width: 100%; bottom: 0%; left: 0%;" src="images/limes.png"/>
+
+        <script>
+            window.game_timeout = false;
+
+            var body = document.getElementsByTagName("body")[0];
+            body.style.width = window.innerWidth + "px";
+            body.style.height = window.innerHeight + "px";
+
+            var html = document.getElementsByTagName("html")[0];
+            html.style.width = window.innerWidth + "px";
+            html.style.height = window.innerHeight + "px";
+
+            document.body.addEventListener('touchmove', function (e) { e.preventDefault(); });
+
+            setTimeout(function() { window.game_timeout = true; }, 2000);
+
+            var waitForLoad = setInterval(function () {
+                if ((window.probtn_game_ready === true) && (window.game_timeout === true)) {
+                    console.log("window.probtn_game_ready", window.probtn_game_ready);
+
+                    /*var start_button = document.getElementById("start_button");
+                    start_button.style.display = "block !important";
+                    start_button.className += " show";*/
+
+                    //start_button.addEventListener("click", function() {
+                    var canvas = document.getElementById("canvas");
+                    canvas.style.display = "block !important";
+                    canvas.className += " show";
+
+                    var gm4html5_div_id = document.getElementById("gm4html5_div_id");
+                    gm4html5_div_id.style.display = "block !important";
+                    gm4html5_div_id.className += " show";
+                    //}, false);
+
+                    clearInterval(waitForLoad);
+                }
+            }, 100);
+        </script>
+
         <div class="gm4html5_div_class" id="gm4html5_div_id">
             <!-- Create the canvas element the game draws to -->
             <canvas id="canvas" width="640" height="480">
@@ -79,6 +133,6 @@
         </div>
 
         <!-- Run the game code -->
-        <script type="text/javascript" src="html5game/limeGame1.js?TNAAC=315267807"></script>
+        <script type="text/javascript" src="html5game/limeGame1.js?LXVZB=307463993"></script>
     </body>
 </html>

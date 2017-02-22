@@ -51,9 +51,6 @@ base_size = max(base_height, base_width);
 window_set_position(0, 0);
 //window_set_size(base_width, base_height);
 
-show_debug_message("base_width " + base_width);
-show_debug_message("base_height " + base_height);
-
 canvas_fullscreen(base_size, base_width, base_height);
 
 
