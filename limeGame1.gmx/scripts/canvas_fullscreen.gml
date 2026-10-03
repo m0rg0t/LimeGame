@@ -3,6 +3,12 @@
 // argument1 = the current browser width
 // argument2 = the current browser height
 
+// Keep the last valid viewport while the browser has no usable size.
+if (argument0 <= 0 || argument1 <= 0 || argument2 <= 0)
+{
+    exit;
+}
+
 view_wport[0] = argument1;
 view_hport[0] = argument2;
 
